@@ -1,0 +1,58 @@
+$def with(producto)
+
+<html>
+<head>
+    <style>
+        body {
+            background-color: #EDEAEA;
+            background-position:center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font face: "Didact Gothic";
+            font size: 17px;
+        }
+        @media only screen and (max-width: 740px) {
+        body {
+            background-color: #EDEAEA;               
+        }
+        }
+    </style>
+</head>
+
+<body>
+<h3>
+    <a href="/producto">Productos</a>
+</h3>
+<table id="datos_tabla" class="table table-hover" cellspacing="0" width="100%">
+    <thead>
+        <th>Categoria</th>
+        <th>Producto</th>
+        <th>Imagen</th>
+        <th>Descripcion</th>
+        <th>Existencias</th>
+        <th>Precio</th>
+        <th>Estado</th>
+        <th>Editar</th>
+
+    </thead>
+    <tbody>
+        $for item in producto:
+        <tr>
+            <td><a href='/producto/view/$item.idproducto'>$item.nombre_cat</a></td>
+            <td><a href='/producto/view/$item.idproducto'>$item.nom_producto </a></td>
+            <td><img src='/static/imagenes/$item.img_producto' width="120px" height="120px"></img></td>
+            <td><a href='/producto/view/$item.idproducto'>$item.descripcion </a></td>
+            <td><a href='/producto/view/$item.idproducto'>$item.existencia</a></td>
+            <td><a href='/producto/view/$item.idproducto'>$item.precio_salida</a></td>
+            $if item.status_prod == 0:
+                <td>INACTIVO</td>
+            $if item.status_prod == 1:
+                <td>ACTIVO</td>
+            <td><a href='/producto/edit/$item.idproducto'><span><img src="/static/imagenes/menu/editar.png" width="15" height="16"></span></a></td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<br>
+</body>

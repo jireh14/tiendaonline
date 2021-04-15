@@ -1,0 +1,52 @@
+$def with(detalle_ingreso)
+
+<html>
+<head>
+    <style>
+        body {
+            background-color: #EDEAEA;
+            background-position:center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font face: "Didact Gothic";
+            font size: 17px;
+        }
+        @media only screen and (max-width: 740px) {
+        body {
+            background-color: #EDEAEA;               
+        }
+        }
+    </style>
+</head>
+
+<body>
+<h3>
+    <a href="/ingreso">Detalle de compra</a>
+</h3>
+<table id="datos_tabla" class="table table-hover" cellspacing="0" width="100%">
+    <thead>
+        <th>Cod. Detalle compra</th>
+        <th>Cod. Compra</th>
+        <th>Producto</th>
+        <th>Cantidad</th>
+        <th>Precio</th>
+        <th>Editar</th>
+        <th>Eliminar</th>
+    </thead>
+    <tbody>
+        $for item in detalle_ingreso:
+        <tr>
+            <td><a href='/detalle_ingreso/view/$item.iddetalle_ingreso'>$item.iddetalle_ingreso</a></td>
+            <td><a href='/detalle_ingreso/view/$item.iddetalle_ingreso'>$item.idingreso_fk</a></td>
+            <td><a href='/detalle_ingreso/view/$item.iddetalle_ingreso'>$item.nom_producto</a></td>
+            <td><a href='/detalle_ingreso/view/$item.iddetalle_ingreso'>$item.cantidad_pro</a></td>
+            <td><a href='/detalle_ingreso/view/$item.iddetalle_ingreso'>$item.precio_in</a></td>
+            <td><a href='/detalle_ingreso/edit/$item.iddetalle_ingreso'><span><img src="/static/imagenes/menu/editar.png" width="15" height="16"></span></a></td>
+            <td><a href='/detalle_ingreso/delete/$item.iddetalle_ingreso'><span><img src="/static/imagenes/menu/eliminar.png" width="15" height="16"></span></a></td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<br>
+</body>

@@ -1,0 +1,50 @@
+$def with(logs)
+
+<html>
+<head>
+    <style>
+        body {
+            background-color: #EDEAEA;
+            background-position:center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font face: "Didact Gothic";
+            font size: 17px;
+        }
+        @media only screen and (max-width: 740px) {
+        body {
+            background-color: #EDEAEA;               
+        }
+        }
+    </style>
+</head>
+
+<body>
+<h3>
+    <a href="/logs">Sesiones</a>
+</h3>
+<table id="datos_imprimir" class="table table-hover" cellspacing="0" width="100%">
+    <thead>
+        <th>No</th>
+        <th>Username</th>
+        <th>Date</th>
+        <th>IP</th>
+    </thead>
+    <tbody>
+        $ i = 1
+        $for item in logs:
+        <tr>
+            <td>$i</td>            
+            $ i = i + 1
+            <td><a href='/logs/view/$item.username'>$item.username.split('!')[0]</a></td>
+            <td><a href='/logs/view/$item.username'>$item.access</a></td>
+            <td><a href='/logs/view/$item.username'>$item.ip</a></td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<br>
+<br>
+<br>
+</body>

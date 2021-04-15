@@ -1,0 +1,74 @@
+$def with(logs)
+
+<html>
+<head>
+    <style>
+        body {
+            background-image: url("/static/imagenes/14092.jpg");
+            background-position:center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font face: "Didact Gothic";
+            font size: 17px;
+        }
+        @media only screen and (max-width: 740px) {
+        body {
+            background-image: url("/static/imagenes/14092.jpg");            
+        }
+        }
+        #view_logs{
+            position: absolute;
+            width: 300px;
+            height: 260px;
+            left: 30%;
+            top: 60px;
+            background: #FFFFFF;
+            border: 2px solid #B1BDC9;
+            box-sizing: border-box;
+            border-radius: 15px;
+            padding-left: 30px;
+            padding-top: 10px;
+            padding-right: 30px;
+        }
+        #campos{
+            font-family: Didact Gothic;
+            font-style: center;
+            font-weight: center;
+            font-size: 17px;
+            line-height: 22px;
+            display: flex;
+            align-items: center;
+            left: center;
+            top: 120px;
+
+            color: #141516;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="view_logs">
+        <h4>
+           <center><a href="/logs">Informacion las sesiones</a> </center> 
+        </h4>
+        <br>
+            <p id="campos">
+            <strong>Nombre: </strong> &nbsp; $logs.nombre_admin <br>
+            </p>
+            <br>
+            <p id="campos">
+            <strong>Ip: </strong> &nbsp; $logs.ip <br>
+            </p>
+            <br>
+            <p id="campos">
+            <strong>Acceso: </strong> &nbsp; $logs.access <br>
+            </p>
+            <br>
+            <div class="form-group">
+            <label></label>
+                <button id="send" name="send" class="form-control"></span> Guardar</button>
+            </div>
+    <br>
+    <br>
+    </body>

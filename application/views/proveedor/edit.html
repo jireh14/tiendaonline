@@ -1,0 +1,65 @@
+$def with(proveedor, message)
+
+<html>
+<head>
+    <style>
+        body {
+            background-color: #EDEAEA;
+            background-position:center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font face: "Didact Gothic";
+            font size: 17px;
+        }
+        @media only screen and (max-width: 740px) {
+        body {
+            background-color: #EDEAEA;            
+        }
+        }
+    </style>
+</head>
+
+<body>
+<h3>
+    <a href="/proveedor">Proveedor</a>
+</h3>
+$if message != None:
+    <div class="alert alert-warning">
+        <strong>Advertencia </strong> $message
+    </div>
+    <br>
+<form action="" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="idproveedor" id="idproveedor" value="$proveedor.idproveedor" />
+
+    <div class="form-group">
+        <label for="nombre_pro">Nombre del Proveedor</label>
+        <input required id="nombre_pro" type="text" class="form-control" name="nombre_pro" size="30" value="$proveedor.nombre_pro"/>
+    </div>
+    
+    <div class="form-group">
+        <label for="telefono_pro">Telefono </label>
+        <input required id="telefono_pro" type="text" class="form-control" name="telefono_pro" size="30" value="$proveedor.telefono_pro"/>
+    </div>
+    
+    <div class="form-group">
+        <label for="correo_pro">Correo</label>
+        <input required id="correo_pro" type="text" class="form-control" name="correo_pro" size="30" value="$proveedor.correo_pro"/>
+    </div>
+    
+    <div class="form-group">
+    <label>Estado</label>
+    <div class="radio">
+        <label><input type="radio" name="status_prov" value=1 checked> Activo</label>
+        <label><input type="radio" name="status_prov" value=0 >Inactivo</label>
+    </div>
+
+    <div class="form-group">
+        <label></label>
+        <button id="send" name="send" class="form-control"><span><img src="/static/imagenes/menu/guardar.png" width="19" height="20"></span> Editar proveedor</button>
+    </div>
+</form>
+<br>
+<br>
+<br>
+</body>

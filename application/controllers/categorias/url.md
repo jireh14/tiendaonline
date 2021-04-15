@@ -1,0 +1,5 @@
+'/categorias', 'application.controllers.categorias.index.Index',
+'/categorias/view/(.+)', 'application.controllers.categorias.view.View',
+'/categorias/edit/(.+)', 'application.controllers.categorias.edit.Edit',
+'/categorias/delete/(.+)', 'application.controllers.categorias.delete.Delete',
+'/categorias/insert', 'application.controllers.categorias.insert.Insert',

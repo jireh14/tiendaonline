@@ -1,0 +1,47 @@
+$def with(params)
+$var nombre_admin: $params['nombre_admin']
+$var privilege: $params['privilege']
+
+<html>
+<head>
+    <style>
+        body {
+            background-color: #EDEAEA;
+            background-position:center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font face: "Didact Gothic";
+            font size: 17px;
+        }
+        @media only screen and (max-width: 740px) {
+        body {
+            background-color: #EDEAEA;               
+        }
+        }
+        #bienvenido{
+            position: absolute;
+            width: 1390px;
+            height: 39px;
+            right: 22px;
+            top: 100px;
+            font-family: Didact Gothic;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 15px;
+            line-height: 39px;
+            text-align: center;
+            letter-spacing: 0.25em;
+            color: #456583;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2 id="h2" style="color:#456583">Administrador $params['nombre_admin']</h2>
+<div id="bienvenido">
+    <center><p>BIENVENIDO AL SISTEMA DE VENTAS</p></center>
+    <br>
+</div>
+

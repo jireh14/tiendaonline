@@ -1,0 +1,44 @@
+$def with(logs)
+
+<html>
+<head>
+    <style>
+        body {
+            background-color: #EDEAEA;
+            background-position:center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font face: "Didact Gothic";
+            font size: 17px;
+        }
+        @media only screen and (max-width: 740px) {
+        body {
+            background-color: #EDEAEA;               
+        }
+        }
+    </style>
+</head>
+
+<body>
+<h3>
+    <a href="/logs">Sesiones</a>
+</h3>
+<table id="datos_tabla" class="table table-hover" cellspacing="0" width="100%">
+    <thead>
+        <th>Sesión</th>
+        <th>Nombre Administrador</th>
+        <th>Hora de acceso</th>
+    </thead>
+    <tbody>
+        $for item in logs:
+        <tr>
+            <td><a href='/logs/view/$item.id_log'>$item.id_log</a></td>
+            <td><a href='/logs/view/$item.id_log'>$item.nombre_admin</a></td>
+            <td><a href='/logs/view/$item.id_log'>$item.access</a></td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<br>
+</body>

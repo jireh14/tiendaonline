@@ -1,0 +1,5 @@
+'/detalle_ingreso', 'application.controllers.detalle_ingreso.index.Index',
+'/detalle_ingreso/view/(.+)', 'application.controllers.detalle_ingreso.view.View',
+'/detalle_ingreso/edit/(.+)', 'application.controllers.detalle_ingreso.edit.Edit',
+'/detalle_ingreso/delete/(.+)', 'application.controllers.detalle_ingreso.delete.Delete',
+'/detalle_ingreso/insert', 'application.controllers.detalle_ingreso.insert.Insert',

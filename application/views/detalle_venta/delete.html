@@ -1,0 +1,63 @@
+$def with(detalle_venta, message)
+
+<html>
+<head>
+    <style>
+        body {
+            background-color: #EDEAEA;
+            background-position:center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font face: "Didact Gothic";
+            font size: 17px;
+        }
+        @media only screen and (max-width: 740px) {
+        body {
+            background-color: #EDEAEA;                
+        }
+        }
+    </style>
+</head>
+
+<body>
+<h3>
+    <a href="/detalle_venta">Detalle venta</a>
+</h3>
+$if message != None:
+    <div class="alert alert-warning">
+        <strong>Advertencia </strong> $message
+    </div>
+<br>
+
+<form action="" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="iddetalle_venta" id="iddetalle_venta" value="$detalle_venta.iddetalle_venta" />
+
+    <div class="form-group">
+        <label for="idventa">Clave de venta</label>
+        <input readonly id="idventa" type="text" class="form-control" name="idventa" size="30" value="$detalle_venta.idventa"/>
+    </div>
+    
+    <div class="form-group">
+        <label for="idproducto">Producto</label>
+        <input readonly id="idproducto" type="text" class="form-control" name="idproducto" size="30" value="$detalle_venta.idproducto"/>
+    </div>
+
+    <div class="form-group">
+        <label for="cantidad">Cantidad</label>
+        <input readonly id="cantidad" type="text" class="form-control" name="cantidad" size="30" value="$detalle_venta.cantidad"/>
+    </div>
+    <div class="form-group">
+        <label for="subtotal">Subtotal</label>
+        <input readonly id="subtotal" type="text" class="form-control" name="subtotal" size="30" value="$detalle_venta.subtotal"/>
+    </div>
+
+    <div class="form-group">
+        <label></label>
+        <button id="send" name="send" class="form-control"><span><img src="/static/imagenes/menu/eliminar.png" width="19" height="20"></span> Eliminar</button>
+    </div>
+</form>
+<br>
+<br>
+<br>
+</body>

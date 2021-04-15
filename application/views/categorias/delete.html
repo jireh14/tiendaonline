@@ -1,0 +1,60 @@
+$def with(categorias, message)
+
+<html>
+<head>
+    <style>
+        body {
+            background-color: #EDEAEA;
+            background-position:center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font face: "Didact Gothic";
+            font size: 17px;
+        }
+        @media only screen and (max-width: 740px) {
+        body {
+            background-color: #EDEAEA;    
+            
+        }
+        }
+    </style>
+</head>
+
+<body>
+<h3>
+    <a href="/categorias">Categorias</a>
+</h3>
+$if message != None:
+    <div class="alert alert-warning">
+        <strong>Advertencia </strong> $message
+    </div>
+<br>
+
+<form action="" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="idcategorias" id="idcategorias" value="$categorias.idcategorias" />
+
+    <div class="form-group">
+        <label for="nombre_cat">Nombre de la Categoria</label>
+        <input readonly id="nombre_cat" type="text" class="form-control" name="nombre_cat" size="30" value="$categorias.nombre_cat"/>
+    </div>
+
+    <div class="form-group">
+        <label for="descripcion_cat">Descripción</label>
+        <input readonly id="descripcion_cat" type="text" class="form-control" name="descripcion_cat" size="30" value="$categorias.descripcion_cat"/>
+    </div> 
+
+    <div class="form-group">
+        <label for="status_cat">Estado</label>
+        <input readonly id="status_cat" type="text" class="form-control" name="status_cat" size="30" value="$categorias.status_cat"/>
+    </div>
+
+    <div class="form-group">
+        <label></label>
+        <button id="send" name="send" class="form-control"><span><img src="/static/imagenes/menu/eliminar.png" width="19" height="20"></span> Eliminar</button>
+    </div>
+</form>
+<br>
+<br>
+<br>
+</body>

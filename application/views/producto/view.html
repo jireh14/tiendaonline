@@ -1,0 +1,83 @@
+$def with(producto)
+
+<html>
+<head>
+    <style>
+        body {
+            background-image: url("/static/imagenes/14092.jpg");
+            background-position:center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font face: "Didact Gothic";
+            font size: 17px;
+        }
+        @media only screen and (max-width: 740px) {
+        body {
+            background-image: url("/static/imagenes/14092.jpg");            
+        }
+        }
+          
+        #view_producto{
+            position: absolute;
+            width: 460px;
+            height: 360px;
+            left: 30%;
+            top: 60px;
+            background: #FFFFFF;
+            border: 2px solid #B1BDC9;
+            box-sizing: border-box;
+            border-radius: 15px;
+            padding-left: 30px;
+            padding-top: 10px;
+            padding-right: 30px;
+        }
+        #campos{
+            font-family: Didact Gothic;
+            font-style: center;
+            font-weight: center;
+            font-size: 17px;
+            line-height: 22px;
+            display: flex;
+            align-items: center;
+            left: center;
+            top: 120px;
+
+            color: #456583;
+        }
+    </style>
+</head>
+
+<body>
+<h3>
+    <a href="/producto">Productos</a>
+</h3>
+
+<table id="datos_tabla" class="table table-hover" cellspacing="0" width="100%">
+    <thead>
+        <th>Categoria</th>
+        <th>Imagen</th>
+        <th>Producto</th>
+        <th>Precio</th>
+        <th>Descripción</th>
+        <th>Marca</th>
+        <th>existencia</th>
+        <th>Estado</th>
+        <th>Editar</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>$producto.idcategorias</td>
+            <td><img src='/static/imagenes/$producto.img_producto' width="120px" height="120px"></img></td>
+            <td>$producto.nom_producto</td>
+            <td>$producto.precio_salida</td>
+            <td>$producto.descripcion</td>
+            <td>$producto.marca</td>
+            <td>$producto.existencia</td> 
+            <td>$producto.status_prod</td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<br>
+</body>

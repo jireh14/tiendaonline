@@ -1,0 +1,86 @@
+$def with(producto, message)
+
+<html>
+<head>
+    <style>
+        body {
+            background-color: #EDEAEA;
+            background-position:center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font face: "Didact Gothic";
+            font size: 17px;
+        }
+        @media only screen and (max-width: 740px) {
+        body {
+            background-color: #EDEAEA;                
+        }
+        }
+    </style>
+</head>
+
+<body>
+<h3>
+    <a href="/producto">Productos</a>
+</h3>
+$if message != None:
+    <div class="alert alert-warning">
+        <strong>Advertencia </strong> $message
+    </div>
+<br>
+
+<form action="" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="idproducto" id="idproducto" value="$producto.idproducto" />
+
+    <div class="form-group">
+        <label for="idcategorias">Categoria</label>
+        <input readonly id="idcategorias" type="text" class="form-control" name="idcategorias" size="30" value="$producto.idcategorias"/>
+    </div>
+    
+    <div class="form-group">
+        <label for="img_producto">Imagen</label>
+        <input readonly id="img_producto" type="text" class="form-control" name="img_producto" size="30" value="$producto.img_producto"/>
+    </div>
+    
+    <div class="form-group">
+        <label for="nom_producto">Nombre del producto</label>
+        <input readonly id="nom_producto" type="text" class="form-control" name="nom_producto" size="30" value="$producto.nom_producto"/>
+    </div>
+    
+    <div class="form-group">
+        <label for="precio_salida">Precio</label>
+        <input readonly id="precio_salida" type="text" class="form-control" name="precio_salida" size="30" value="$producto.precio_salida"/>
+    </div>
+    
+    <div class="form-group">
+        <label for="descripcion">Descripción</label>
+        <input readonly id="descripcion" type="text" class="form-control" name="descripcion" size="30" value="$producto.descripcion"/>
+    </div>
+    
+    <div class="form-group">
+        <label for="marca">Marca</label>
+        <input readonly id="marca" type="text" class="form-control" name="marca" size="30" value="$producto.marca"/>
+    </div>
+
+    <div class="form-group">
+        <label for="existencia">Existencias</label>
+        <input readonly id="existencia" type="text" class="form-control" name="existencia" size="30" value="$producto.existencia"/>
+    </div>
+    
+    <div class="form-group">
+        <label>Estado</label>
+    <div class="radio">
+        <label><input type="radio" name="status_prod" value=1 checked> Activo</label>
+        <label><input type="radio" name="status_prod" value=0 >Inactivo</label>
+    </div>
+
+    <div class="form-group">
+        <label></label>
+        <button id="send" name="send" class="form-control"><span><img src="/static/imagenes/menu/eliminar.png" width="19" height="20"></span> Eliminar</button>
+    </div>
+</form>
+<br>
+<br>
+<br>
+</body>

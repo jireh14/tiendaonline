@@ -1,0 +1,31 @@
+$def with(params)
+$var nombre_admin: $params['nombre_admin']
+$var privilege: $params['privilege']
+
+<html>
+<head>
+    <style>
+        body {
+            background-color: #EDEAEA;
+            background-position:center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font face: "Didact Gothic";
+            font size: 17px;
+        }
+        @media only screen and (max-width: 740px) {
+        body {
+            background-color: #EDEAEA;    
+            
+        }
+        }
+    </style>
+</head>
+
+<body>
+<h1>User $params['nombre_admin']</h1>
+<p>Sistema de ventas 2021</p>
+<br>
+<br>
+</body>

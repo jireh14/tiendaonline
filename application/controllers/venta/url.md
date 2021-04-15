@@ -1,0 +1,5 @@
+'/venta', 'application.controllers.venta.index.Index',
+'/venta/view/(.+)', 'application.controllers.venta.view.View',
+'/venta/edit/(.+)', 'application.controllers.venta.edit.Edit',
+'/venta/delete/(.+)', 'application.controllers.venta.delete.Delete',
+'/venta/insert', 'application.controllers.venta.insert.Insert',

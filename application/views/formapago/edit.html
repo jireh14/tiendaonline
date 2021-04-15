@@ -1,0 +1,78 @@
+$def with(formapago, message)
+
+<html>
+<head>
+    <style>
+        body {
+            background-color: #EDEAEA;
+            background-position:center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font face: "Didact Gothic";
+            font size: 17px;
+        }
+        @media only screen and (max-width: 740px) {
+        body {
+            background-color: #EDEAEA;              
+        }
+        }
+    </style>
+</head>
+
+<body>
+<h3>
+    <a href="/formapago">Forma de pago</a>
+</h3>
+$if message != None:
+    <div class="alert alert-warning">
+        <strong>Advertencia </strong> $message
+    </div>
+    <br>
+<form action="" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="idformapago" id="idformapago" value="$formapago.idformapago" />
+
+    <div class="form-group">
+        <label for="efectivo">Efectivo</label>
+        <input required id="efectivo" type="text" class="form-control" name="efectivo" size="30" value="$formapago.efectivo"/>
+    </div>
+    
+    <div class="form-group">
+        <label for="banco">Banco</label>
+        <input required id="banco" type="text" class="form-control" name="banco" size="30" value="$formapago.banco"/>
+    </div>
+    
+    <div class="form-group">
+        <label for="nom_titular">Nombre del titular</label>
+        <input required id="nom_titular" type="text" class="form-control" name="nom_titular" size="30" value="$formapago.nom_titular"/>
+    </div>
+    
+    <div class="form-group">
+        <label for="num_cuenta">Numero de cuenta</label>
+        <input required id="num_cuenta" type="text" class="form-control" name="num_cuenta" size="30" value="$formapago.num_cuenta"/>
+    </div>
+    
+    <div class="form-group">
+        <label for="num_tarjeta">Numero de tarjeta</label>
+        <input required id="num_tarjeta" type="text" class="form-control" name="num_tarjeta" size="30" value="$formapago.num_tarjeta"/>
+    </div>
+    
+    <div class="form-group">
+        <label for="fecha_ven">Fecha de vencimiento</label>
+        <input required id="fecha_ven" type="text" class="form-control" name="fecha_ven" size="30" value="$formapago.fecha_ven"/>
+    </div>
+    
+    <div class="form-group">
+        <label for="nip">Nip</label>
+        <input required id="nip" type="text" class="form-control" name="nip" size="30" value="$formapago.nip"/>
+    </div>
+
+    <div class="form-group">
+        <label></label>
+        <button id="send" name="send" class="form-control"><span><img src="/static/imagenes/menu/guardar.png" width="19" height="20"></span> Actualizar</button>
+    </div>
+</form>
+<br>
+<br>
+<br>
+</body>

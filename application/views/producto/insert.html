@@ -1,0 +1,88 @@
+$def with(categorias)
+<html>
+<head>
+    <style>
+        body {
+            background-color: #EDEAEA;
+            background-position:center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font face: "Didact Gothic";
+            font size: 17px;
+        }
+        @media only screen and (max-width: 740px) {
+        body {
+            background-color: #EDEAEA;              
+        }
+        }
+    </style>
+</head>
+
+<body>
+<h3>
+    <center><a href="/producto">Insertar Nuevo Producto </a></center>
+</h3>
+<form action="" method="post" enctype="multipart/form-data">
+    
+    <div class="form-group">
+        <label for="idcategorias">Categoria</label>
+        <p></p>
+        <select requeried id="idcategorias" name="idcategorias" class="form-control">
+            <option value="0">Selecciona una categoria... </option>
+                $for cat in categorias:
+                    <option value="$cat.idcategorias">$cat.nombre_cat</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+       
+        <label for="img_producto">Imagen</label>
+        <input required id="img_producto" type="text" class="form-control" name="img_producto" size="200"/>
+    </div>
+
+    <div class="form-group">
+        <label for="nom_producto">Nombre del producto</label>
+        <input required id="nom_producto" type="text" class="form-control" name="nom_producto" col-m size="30"/>
+    </div>
+
+    <div class="form-group">
+        <label for="precio_salida">Precio</label>
+        <input required id="precio_salida" type="number" class="form-control" name="precio_salida" size="30"/>
+    </div>
+
+    <div class="form-group">
+        <label for="descripcion">Descripción</label>
+        <input required id="descripcion" type="text" class="form-control" name="descripcion" size="30"/>
+    </div>
+
+    <div class="form-group">
+        <label for="marca">Marca</label>
+        <input required id="marca" type="text" class="form-control" name="marca" size="30"/>
+    </div>
+
+    <div class="form-group">
+        <label for="existencia">Existencias</label>
+        <input required id="existencia" type="number" class="form-control" name="existencia" size="30"/>
+    </div>
+    
+    <div class="form-group">
+        <label>Estado</label>
+        <div class="radio">
+            <label><input type="radio" name="status_prod" value=1 checked>ACTIVO</label>
+            <label><input type="radio" name="status_prod" value=0 >INACTIVO</label>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label></label>
+        <button id="send" name="send" class="form-control"><span><img src="/static/imagenes/menu/guardar.png" width="19" height="19"></span> Guardar</button>
+    </div>
+</form>
+<br>
+<br>
+<br>
+
+<br>
+
+</body>

@@ -1,0 +1,65 @@
+$def with(venta, message)
+
+<html>
+<head>
+    <style>
+        body {
+            background-color: #EDEAEA;
+            background-position:center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font face: "Didact Gothic";
+            font size: 17px;
+        }
+        @media only screen and (max-width: 740px) {
+        body {
+            background-color: #EDEAEA;               
+        }
+        }
+        
+    </style>
+</head>
+
+<body>
+<h3>
+    <a href="/venta">Ventas</a>
+</h3>
+$if message != None:
+    <div class="alert alert-warning">
+        <strong>Advertencia </strong> $message
+    </div>
+<br>
+
+<form action="" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="idventa" id="idventa" value="$venta.idventa" />
+
+    <div class="form-group">
+        <label for="idusuario">Usuario</label>
+        <input readonly id="idusuario" type="text" class="form-control" name="idusuario" size="30" value="$venta.idusuario"/>
+    </div>
+    
+    <div class="form-group">
+        <label for="total">Total</label>
+        <input readonly id="total" type="text" class="form-control" name="total" size="30" value="$venta.total"/>
+    </div>
+    
+    <div class="form-group">
+        <label for="idformapago">Forma de pago</label>
+        <input readonly id="idformapago" type="text" class="form-control" name="idformapago" size="30" value="$venta.idformapago"/>
+    </div>
+    
+    <div class="form-group">
+        <label for="fecha_venta">Fecha de venta</label>
+        <input readonly id="fecha_venta" type="text" class="form-control" name="fecha_venta" size="30" value="$venta.fecha_venta"/>
+    </div>
+
+    <div class="form-group">
+        <label></label>
+        <button id="send" name="send" class="form-control"><span><img src="/static/imagenes/menu/eliminar.png" width="19" height="20"></span> Eliminar</button>
+    </div>
+</form>
+<br>
+<br>
+<br>
+</body>

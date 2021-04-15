@@ -1,0 +1,5 @@
+'/formapago', 'application.controllers.formapago.index.Index',
+'/formapago/view/(.+)', 'application.controllers.formapago.view.View',
+'/formapago/edit/(.+)', 'application.controllers.formapago.edit.Edit',
+'/formapago/delete/(.+)', 'application.controllers.formapago.delete.Delete',
+'/formapago/insert', 'application.controllers.formapago.insert.Insert',

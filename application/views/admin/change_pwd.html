@@ -1,0 +1,58 @@
+$def with(admin, message)
+
+<html>
+<head>
+    <style>
+        body {
+            background-color: #EDEAEA;
+            background-position:center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font face: "Didact Gothic";
+            font size: 17px;
+        }
+        @media only screen and (max-width: 740px) {
+        body {
+            background-color: #EDEAEA;    
+            
+        }
+        }
+    </style>
+</head>
+
+<body>
+<h3>
+    <a href="/admin">Usuario</a>
+</h3>
+<h2>¡Cambie su contraseña!</h2>
+
+$if message != None:
+    <div class="alert alert-warning">
+        <strong>Advertencia </strong> $message
+    </div>
+
+<form action="" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label>Nombre de usuario</label>
+        <input readonly id="nombre_admin" type="text" class="form-control" name="nombre_admin" size="30" value="$admin.nombre_admin.split('!')[0]"/>
+    </div>
+
+    <div class="form-group">
+        <label>Contraseña</label>
+        <input required id="password" type="password" class="form-control" name="password" size="30"/>
+    </div>
+
+    <div class="form-group">
+        <label>Confirmar contraseña</label>
+        <input required id="password2" type="password" class="form-control" name="password2" size="30"/>
+    </div>
+
+    <div class="form-group">
+        <label></label>
+        <button id="send" name="send" class="form-control"><span><img src="/static/imagenes/menu/mas.png" width="19" height="19"></span> Actualizar contraseña</button>
+    </div>
+</form>
+<br>
+<br>
+</body>

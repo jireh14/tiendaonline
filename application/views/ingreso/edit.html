@@ -1,0 +1,77 @@
+$def with(ingreso, message, proveedor)
+
+<html>
+<head>
+    <style>
+        body {
+            background-color: #EDEAEA;
+            background-position:center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font face: "Didact Gothic";
+            font size: 17px;
+        }
+        @media only screen and (max-width: 740px) {
+        body {
+            background-color: #EDEAEA;         
+        }
+        }
+    </style>
+</head>
+
+<body>
+<h3>
+    <a href="/ingreso">Compras</a>
+</h3>
+$if message != None:
+    <div class="alert alert-warning">
+        <strong>Advertencia </strong> $message
+    </div>
+    <br>
+<form action="" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="idingreso" id="idingreso" value="$ingreso.idingreso" />
+
+    <div class="form-group">
+        <label for="idproveedor">Proveedor</label>
+        <select requeried id="idproveedor" name="idproveedor" class="form-control">
+            <option value="0">Selecciona un proveedor... </option>
+                $for prov in proveedor:
+                    <option value="$prov.idproveedor">$prov.nombre_pro</option>
+        </select>
+    </div>
+    
+    <div class="form-group">
+        <label for="fecha_ingreso">Fecha de ingreso</label>
+        <input required id="fecha_ingreso" type="text" class="form-control" name="fecha_ingreso" size="30" value="$ingreso.fecha_ingreso"/>
+    </div>
+    
+    <div class="form-group">
+        <label for="tipo_comprobante">Tipo de comprobante</label>
+        <input required id="tipo_comprobante" type="text" class="form-control" name="tipo_comprobante" size="30" value="$ingreso.tipo_comprobante"/>
+    </div>
+    
+    <div class="form-group">
+        <label for="serie_comprobante">Serie de comprobante</label>
+        <input required id="serie_comprobante" type="text" class="form-control" name="serie_comprobante" size="30" value="$ingreso.serie_comprobante"/>
+    </div>
+    
+    <div class="form-group">
+        <label for="numero_comprobante">Numero de comprobante</label>
+        <input required id="numero_comprobante" type="text" class="form-control" name="numero_comprobante" size="30" value="$ingreso.numero_comprobante"/>
+    </div>
+    
+    <div class="form-group">
+        <label for="total">Total</label>
+        <input required id="total" type="text" class="form-control" name="total" size="30" value="$ingreso.total"/>
+    </div>
+
+    <div class="form-group">
+        <label></label>
+        <button id="send" name="send" class="form-control"><span><img src="/static/imagenes/menu/guardar.png" width="19" height="20"></span> Actualizar</button>
+    </div>
+</form>
+<br>
+<br>
+<br>
+</body>

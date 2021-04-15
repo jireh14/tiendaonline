@@ -1,0 +1,98 @@
+$def with(admin)
+
+<html>
+<head>
+    <style>
+        body {
+            background-image: url("/static/imagenes/14092.jpg");
+            background-position:center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font face: "Didact Gothic";
+            font size: 17px;
+        }
+        @media only screen and (max-width: 740px) {
+        body {
+            background-image: url("/static/imagenes/14092.jpg");              
+        }
+        }
+        #view_admin{
+            position: absolute;
+            width: 590px;
+            height: 500px;
+            left: 30%;
+            top: 60px;
+            background: #FFFFFF;
+            border: 2px solid #B1BDC9;
+            box-sizing: border-box;
+            border-radius: 15px;
+            padding-left: 30px;
+            padding-top: 10px;
+            padding-right: 30px;
+
+        }
+        #campos{
+            font-family: Didact Gothic;
+            font-style: center;
+            font-weight: center;
+            font-size: 17px;
+            line-height: 22px;
+            display: flex;
+            align-items: center;
+            left: center;
+            top: 120px;
+
+            color: #141516;
+        }
+    </style>
+</head>
+
+<body>
+<div id="view_admin">
+    <h4>
+       <center><a href="/admin">Informacion del administrador</a> </center> 
+    </h4>
+    <br>
+    <p id="campos" style="padding-left: 60%;">
+        <strong> Fecha de registro: </strong> &nbsp; $admin.created </p>
+        <p id="campos">
+        <strong>Nombre completo: </strong> &nbsp; $admin.apellidos_admin 
+        <br>
+        </p>
+        <p id="campos">
+        <strong>Numero de cuenta: &nbsp; </strong> $admin.num_cuenta <br>
+        </p>
+        <p id="campos">
+        <strong>Nombre del Banco: &nbsp;</strong>  $admin.nombre_banco <br>
+        </p>
+        <p id="campos">
+        <strong>Tipo de tarjeta: &nbsp;</strong>  $admin.tipo_tarjeta_admin <br>
+        </p>
+        <p id="campos">
+        <strong>Numero de tarjeta: &nbsp;</strong>  $admin.num_tarjeta <br>
+        </p>
+        <p id="campos">
+        <strong>Telefono: &nbsp;</strong>  $admin.telefono_admin <br>
+        </p>
+        <p id="campos">
+        <strong> Correo: &nbsp;</strong> $admin.correo_admin <br>
+        </p>
+        <strong><label id="campos">Estado</label></strong>
+        <div class="radio">
+            <label id="campos"><input type="radio" name="status_admin" value=1 checked> Activo</label>
+            <label id="campos"><input type="radio" name="status_admin" value=0> Inactivo</label>
+        </div>
+        <br>
+        <div class="form-group">
+        <label></label>
+            <button id="send" name="send" class="form-control"></span> Guardar</button>
+            <br>
+<br>
+<br>
+        </div>
+</div>
+
+<br>
+
+</body>

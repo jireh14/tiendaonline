@@ -1,0 +1,54 @@
+$def with(usuario)
+
+<html>
+<head>
+    <style>
+        body {
+            background-color: #EDEAEA;
+            background-position:center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font face: "Didact Gothic";
+            font size: 17px;
+        }
+        @media only screen and (max-width: 740px) {
+        body {
+            background-color: #EDEAEA;                
+        }
+        }
+    </style>
+</head>
+
+<body>
+<h3>
+    <a href="/usuario">Usuario</a>
+</h3>
+<table id="datos_tabla" class="table table-hover" cellspacing="0" width="100%">
+    <thead>
+        <th>Cod. de Usuario</th>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>Correo</th>
+        <th>Fecha de registro</th>
+        <th>Estado</th>
+        <th>Editar</th>
+        <th>Eliminar</th>
+    </thead>
+    <tbody>
+        $for item in usuario:
+        <tr>
+            <td><a href='/usuario/view/$item.idusuario'>$item.idusuario</a></td>
+            <td><a href='/usuario/view/$item.idusuario'>$item.nombre</a></td>
+            <td><a href='/usuario/view/$item.idusuario'>$item.apellidos</a></td>
+            <td><a href='/usuario/view/$item.idusuario'>$item.correo_usuario</a></td>
+            <td><a href='/usuario/view/$item.idusuario'>$item.fecha_reg_usu</a></td>
+            <td><a href='/usuario/view/$item.idusuario'>$item.status_user</a></td>
+            <td><a href='/usuario/edit/$item.idusuario'><span><img src="/static/imagenes/menu/editar.png" width="15" height="16"></span></a></td>
+            <td><a href='/usuario/delete/$item.idusuario'><span><img src="/static/imagenes/menu/eliminar.png" width="15" height="16"></span></a></td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<br>
+</body> 

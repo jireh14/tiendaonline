@@ -1,0 +1,78 @@
+$def with(message)
+$var privilege: -1
+<html>
+<head>
+    <style>
+        body {
+            background-image: url("/static/imagenes/cyber-monday-shopping-sales.jpg");
+            background-position:center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font: "Didact Gothic";
+            
+
+        }
+        @media only screen and (max-width: 740px) {
+        body {
+            background-image: url("/static/imagenes/cyber-monday-shopping-sales.jpg");    
+            
+        }
+        }
+
+        #sesion{
+            position: absolute;
+            width: 580px;
+            height: 310px;
+            left: 30%;
+            top: 20%;
+            background: #F9F9F9;
+            border: 2px solid #F9F9F9;
+            box-sizing: border-box;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 15px;
+        }
+
+        #ingresar{
+            position: center;
+            width: 200px;
+            height: 50px;
+            text-align: center;
+            background: #43A6EE;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 10px;
+            color: #43A6EE;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+$if message != None:
+    <div class="alert alert-danger">
+	<strong>Error:</strong> $message
+    </div>
+
+<div>
+<form action="" method="post" enctype="multipart/form-data" id="sesion">
+    <div style="margin-left: 30px; margin-right: 30px;">
+    <h2 style="color:#46CAEA; margin-left: 130px;" >Inicio de sesion</h2>
+    <p>&nbsp;</p>
+            <label style="color:#456583">Nombre de usuario:</label>
+            <input required id="nombre_admin" type="text" class="form-control" name="nombre_admin" 
+            style="border-color:#b2b6b9"/>
+    </div>
+<p></p>
+    <div style="margin-left: 30px; margin-right: 30px;">
+            <label style="color:#456583">Contraseña:</label>
+            <input required id="password" type="password" class="form-control" name="password" size="30"
+            style="border-color:#b2b6b9"/>
+    </div>
+    <div>
+        <p>&nbsp;</p>
+        <button id="Login" name="Login" class="btn btn-success" style=" margin-left: 210px; height: 30px; ">Iniciar sesion</button>
+    </div>
+            
+</form>
+</div>
+</body>

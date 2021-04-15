@@ -1,0 +1,1 @@
+'/api_detalle_venta/?', 'application.api.detalle_venta.api_detalle_venta.Api_detalle_venta',

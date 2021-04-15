@@ -1,0 +1,104 @@
+$def with(usuario, message)
+
+<html>
+<head>
+    <style>
+        body {
+            background-color: #EDEAEA;
+            background-position:center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font face: "Didact Gothic";
+            font size: 17px;
+        }
+        @media only screen and (max-width: 740px) {
+        body {
+            background-color: #EDEAEA;              
+        }
+        }
+    </style>
+</head>
+
+<body>
+<h3>
+    <a href="/usuario">Usuario</a>
+</h3>
+$if message != None:
+    <div class="alert alert-warning">
+        <strong>Advertencia </strong> $message
+    </div>
+<br>
+
+<form action="" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="idusuario" id="idusuario" value="$usuario.idusuario" />
+
+    <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input readonly id="nombre" type="text" class="form-control" name="nombre" size="30" value="$usuario.nombre"/>
+    </div>
+    
+    <div class="form-group">
+        <label for="apellidos">Apellidos</label>
+        <input readonly id="apellidos" type="text" class="form-control" name="apellidos" size="30" value="$usuario.apellidos"/>
+    </div>
+    
+    <div class="form-group">
+        <label for="correo_usuario">Correo</label>
+        <input readonly id="correo_usuario" type="text" class="form-control" name="correo_usuario" size="30" value="$usuario.correo_usuario"/>
+    </div>
+    
+    <div class="form-group">
+        <label for="contrasena">Contraseña</label>
+        <input readonly id="contrasena" type="text" class="form-control" name="contrasena" size="30" value="$usuario.contrasena"/>
+    </div>
+    
+    <div class="form-group">
+        <label for="calle_num">Dirección</label>
+        <input readonly id="calle_num" type="text" class="form-control" name="calle_num" size="30" value="$usuario.calle_num"/>
+    </div>
+    
+    <div class="form-group">
+        <label for="colonia">Colonia</label>
+        <input readonly id="colonia" type="text" class="form-control" name="colonia" size="30" value="$usuario.colonia"/>
+    </div>
+    
+    <div class="form-group">
+        <label for="codigo_postal">Código postal</label>
+        <input readonly id="codigo_postal" type="text" class="form-control" name="codigo_postal" size="30" value="$usuario.codigo_postal"/>
+    </div>
+    
+    <div class="form-group">
+        <label for="ciudad">Ciudad</label>
+        <input readonly id="ciudad" type="text" class="form-control" name="ciudad" size="30" value="$usuario.ciudad"/>
+    </div>
+    
+    <div class="form-group">
+        <label for="estado">Estado</label>
+        <input readonly id="estado" type="text" class="form-control" name="estado" size="30" value="$usuario.estado"/>
+    </div>
+    
+    <div class="form-group">
+        <label for="referencias">Referencias</label>
+        <input readonly id="referencias" type="text" class="form-control" name="referencias" size="30" value="$usuario.referencias"/>
+    </div>
+    
+    <div class="form-group">
+        <label for="fecha_reg_usu">Fecha de registro</label>
+        <input readonly id="fecha_reg_usu" type="text" class="form-control" name="fecha_reg_usu" size="30" value="$usuario.fecha_reg_usu"/>
+    </div>
+    
+    <div class="form-group">
+        <label for="status_user">Estado</label>
+        <input readonly id="status_user" type="text" class="form-control" name="status_user" size="30" value="$usuario.status_user"/>
+    </div>
+
+    <div class="form-group">
+        <label></label>
+        <button id="send" name="send" class="form-control"><span><img src="/static/imagenes/menu/eliminar.png" width="19" height="20"></span> Eliminar</button>
+    </div>
+</form>
+<br>
+<br>
+<br>
+</body>

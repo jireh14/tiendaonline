@@ -1,0 +1,50 @@
+$def with(admin)
+<html>
+<head>
+    <style>
+        body {
+            background-color: #EDEAEA;
+            background-position:center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font: "Didact Gothic";
+            font size: 17px;
+        }
+        @media only screen and (max-width: 740px) {
+        body {
+            background-color: #EDEAEA;    
+            
+        }
+        }
+    </style>
+</head>
+
+<body>
+    <h3>
+        <a href="/admin">Administradores</a>
+    </h3>
+    <table id="datos_tabla" class="table table-hover" cellspacing="0" width="100%">
+        <thead>
+            <th>Administrador</th>
+            <th>Correo</th>
+            <th>Telefono</th>
+            <th>Fecha de registro</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+        </thead>
+        <tbody>
+            $for item in admin:
+            <tr>
+                <td><a href='/admin/view/$item.nombre_admin'>$item.apellidos_admin</a></td>
+                <td><a href='/admin/view/$item.nombre_admin'>$item.correo_admin</a></td>
+                <td><a href='/admin/view/$item.nombre_admin'>$item.telefono_admin</a></td>
+                <td><a href='/admin/view/$item.nombre_admin'>$item.created</a></td>
+                <td><a href='/admin/edit/$item.nombre_admin'><span><img src="/static/imagenes/menu/editar.png" width="15" height="16"></span></a></td>
+                <td><a href='/admin/delete/$item.nombre_admin'><span><img src="/static/imagenes/menu/eliminar.png" width="15" height="16"></span></a></td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <br>
+</body>

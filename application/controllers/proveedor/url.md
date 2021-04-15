@@ -1,0 +1,5 @@
+'/proveedor', 'application.controllers.proveedor.index.Index',
+'/proveedor/view/(.+)', 'application.controllers.proveedor.view.View',
+'/proveedor/edit/(.+)', 'application.controllers.proveedor.edit.Edit',
+'/proveedor/delete/(.+)', 'application.controllers.proveedor.delete.Delete',
+'/proveedor/insert', 'application.controllers.proveedor.insert.Insert',

@@ -1,0 +1,51 @@
+$def with(venta)
+
+<html>
+<head>
+    <style>
+        body {
+            background-color: #EDEAEA;
+            background-position:center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font face: "Didact Gothic";
+            font size: 17px;
+        }
+        @media only screen and (max-width: 740px) {
+        body {
+            background-color: #EDEAEA;               
+        }
+        }
+    </style>
+</head>
+
+<body>
+<h3>
+    <a href="/">Ventas</a>
+</h3>
+<table id="datos_tabla" class="table table-hover" cellspacing="0" width="100%">
+    <thead>
+        <th>Codigo de venta</th>
+        <th>Usuario</th>
+        <th>Correo de Usuario</th>
+        <th>Fecha de Venta</th>
+        <th>Total</th>
+        
+
+    </thead>
+    <tbody>
+        $for item in venta:
+        <tr>
+            <td><a href='/venta/view/$item.idventa'>$item.idventa</a></td>
+            <td><a href='/venta/view/$item.idventa'>$item.nombre, $item.apellidos</a></td>
+            <td><a href='/venta/view/$item.idventa'>$item.correo_usuario</a></td>
+            <td><a href='/venta/view/$item.idventa'>$item.fecha_venta</a></td>
+            <td><a href='/venta/view/$item.idventa'>$item.total</a></td>
+            
+        </tr>
+    </tbody>
+</table>
+<br>
+<br>
+</body>

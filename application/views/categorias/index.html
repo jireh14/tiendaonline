@@ -1,0 +1,46 @@
+$def with(categorias)
+
+<html>
+<head>
+    <style>
+        body {
+            background-color: #EDEAEA;
+            background-position:center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font face: "Didact Gothic";
+            font size: 45;
+        }
+        @media only screen and (max-width: 740px) {
+        body {
+            background-color: #EDEAEA;                
+        }
+        }
+    </style>
+</head>
+
+<body>
+<h3>
+    <a href="/categorias">Categorias</a>
+</h3>
+<table id="datos_tabla" class="table table-hover" cellspacing="0" width="100%">
+    <thead>
+        <th>Categorias</th>
+        <th>Descripción</th>
+        <th>Editar</th>
+        <th>Eliminar</th>
+    </thead>
+    <tbody>
+        $for item in categorias:
+        <tr>
+            <td><a href='/categorias/view/$item.idcategorias'>$item.nombre_cat</a></td>
+            <td><a href='/categorias/view/$item.idcategorias'>$item.descripcion_cat</a></td>
+            <td><a href='/categorias/edit/$item.idcategorias'><span><img src="/static/imagenes/menu/editar.png" width="15" height="16"></span></a></td>
+            <td><a href='/categorias/delete/$item.idcategorias'><span><img src="/static/imagenes/menu/eliminar.png" width="15" height="16"></span></a></td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<br>
+</body>

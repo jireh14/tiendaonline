@@ -1,0 +1,126 @@
+$def with(admin, message)
+
+<html>
+<head>
+    <style>
+        body {
+            background-color: #EDEAEA;
+            background-position:center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font face: "Didact Gothic";
+            font size: 17px;
+        }
+        @media only screen and (max-width: 740px) {
+        body {
+            background-color: #EDEAEA;    
+            
+        }
+        }
+    </style>
+</head>
+
+<body>
+
+<h3>
+    <a href="/admin">Administradores</a>
+</h3>
+$if message != None:
+    <div class="alert alert-warning">
+        <strong>Advertencia </strong> $message
+    </div>
+
+<form action="" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label>Nombre completo</label>
+            <input required id="apellidos_admin" type="text" class="form-control" name="apellidos_admin" value= $admin.apellidos_admin size="100"/>
+        </div>
+
+        <div class="form-group">
+            <label>Nombre de usuario</label>
+            <input readonly id="nombre_admin" type="text" class="form-control" name="nombre_admin" value= $admin.nombre_admin size="100"/>
+        </div>
+    
+        <div class="form-group">
+            <label>Numero de cuenta</label>
+            <input required id="num_cuenta" type="number" class="form-control" name="num_cuenta" value= $admin.num_cuenta size="18"/>
+        </div>
+    
+        <div class="form-group">
+            <label>Banco</label>
+            <input required id="nombre_banco" type="text" class="form-control" name="nombre_banco" value= $admin.nombre_banco size="30"/>
+        </div>
+    
+        <div class="form-group">
+            <label>Tipo de tarjeta</label>
+            <div class="radio">
+                <label><input type="radio" name="tipo_tarjeta_admin" value=0 checked>Debito</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="tipo_tarjeta_admin" value=1>Credito</label>
+            </div>
+        </div>
+    
+        <div class="form-group">
+            <label>Numero de tarjeta</label>
+            <input required id="num_tarjeta" type="number" class="form-control" name="num_tarjeta" value= $admin.num_tarjeta size="16"/>
+        </div>
+        
+        <div class="form-group">
+            <label>Telefono</label>
+            <input required id="telefono_admin" type="number" class="form-control" name="telefono_admin" value= $admin.telefono_admin size="30"/>
+        </div> 
+    
+        <div class="form-group">
+            <label>Correo</label>
+            <input required id="correo_admin" type="email" class="form-control" name="correo_admin" value= $admin.correo_admin size="30"/>
+        </div>
+    
+        <div class="form-group">
+            <label>Contraseña</label>
+            <input required id="password" type="password" class="form-control" name="password" value= $admin.password size="30"/>
+        </div>
+
+    <div class="form-group">
+        <label>Privilegio</label>
+        <select readonly name="privilege" id="privilege" class="form-control" value="$admin.privilege">
+          <option value=0>Admin</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Clave de usuario</label>
+        <input readonly id="user_hash" type="text" class="form-control" name="user_hash" size="32" value="$admin.user_hash"/>
+    </div>
+    
+        <div class="form-group">
+            <label>Estado</label>
+            <div class="radio">
+                <label><input type="radio" name="status_admin" value=0 >Inactivo</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="status_admin" value=1 checked>Activo</label>
+            </div>
+        </div>
+    
+        <div class="form-group">
+            <label>Forzar cambio de Contraseña</label>
+            <div class="radio">
+                <label><input type="radio" name="change_pwd" value=0 >No</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="change_pwd" value=1 checked>si</label>
+            </div>
+        </div>
+    
+    <div class="form-group">
+        <label></label>
+        <button id="send" name="send" class="btn btn-success"><span><img src="/static/imagenes/menu/guardar.png" width="19" height="20"></span> Editar</button>
+    </div>
+    </form>
+
+    
+<br>
+<br>
+<br>

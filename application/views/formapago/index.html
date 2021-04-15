@@ -1,0 +1,56 @@
+$def with(formapago)
+
+<html>
+<head>
+    <style>
+        body {
+            background-color: #EDEAEA;
+            background-position:center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font face: "Didact Gothic";
+            font size: 17px;
+        }
+        @media only screen and (max-width: 740px) {
+        body {
+            background-color: #EDEAEA;             
+        }
+        }
+    </style>
+</head>
+
+<body>
+<h3>
+    <a href="/formapago">Forma de pago</a>
+</h3>
+<table id="datos_tabla" class="table table-hover" cellspacing="0" width="100%">
+    <thead>
+        <th>Cod. Forma de pago</th>
+        <th>Efectivo</th>
+        <th>Banco</th>
+        <th>Titular</th>
+        <th>Cuenta</th>
+        <th>Tarjeta</th>
+        <th>Vencimiento</th>
+        <th>Eliminar</th>
+    </thead>
+    <tbody>
+        $for item in formapago:
+        <tr>
+            <td><a href='/formapago/view/$item.idformapago'>$item.idformapago</a></td>
+            <td><a href='/formapago/view/$item.idformapago'>$item.efectivo</a></td>
+            <td><a href='/formapago/view/$item.idformapago'>$item.banco</a></td>
+            <td><a href='/formapago/view/$item.idformapago'>$item.nom_titular</a></td>
+            <td><a href='/formapago/view/$item.idformapago'>$item.num_cuenta</a></td>
+            <td><a href='/formapago/view/$item.idformapago'>$item.num_tarjeta</a></td>
+            <td><a href='/formapago/view/$item.idformapago'>$item.fecha_ven</a></td>
+            <td><a href='/formapago/view/$item.idformapago'>$item.nip</a></td>
+            <td><a href='/formapago/edit/$item.idformapago'><span><img src="/static/imagenes/menu/editar.png" width="15" height="16"></span></span></a></td>
+            <td><a href='/formapago/delete/$item.idformapago'><span><img src="/static/imagenes/menu/eliminar.png" width="15" height="16"></span></a></td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<br>
+</body>

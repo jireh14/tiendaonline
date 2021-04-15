@@ -1,0 +1,5 @@
+'/detalle_venta', 'application.controllers.detalle_venta.index.Index',
+'/detalle_venta/view/(.+)', 'application.controllers.detalle_venta.view.View',
+'/detalle_venta/edit/(.+)', 'application.controllers.detalle_venta.edit.Edit',
+'/detalle_venta/delete/(.+)', 'application.controllers.detalle_venta.delete.Delete',
+'/detalle_venta/insert', 'application.controllers.detalle_venta.insert.Insert',

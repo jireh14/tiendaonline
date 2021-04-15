@@ -1,0 +1,59 @@
+$def with(producto)
+<html>
+<head>
+    <style>
+        body {
+            background-color: #EDEAEA;
+            background-position:center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font face: "Didact Gothic";
+            font size: 17px;
+        }
+        @media only screen and (max-width: 740px) {
+        body {
+            background-color: #EDEAEA;               
+        }
+        }
+    </style>
+</head>
+
+<body>
+<h3>
+    <a href="/detalle_ingreso">Detalle de Compra</a>
+</h3>
+<form action="" method="post" enctype="multipart/form-data">
+
+    <div class="form-group">
+        <label for="idingreso_fk">Clave de Compra</label>
+        <input required id="idingreso_fk" type="text" class="form-control" name="idingreso_fk" size="30"/>
+    </div>
+    
+    <div class="form-group">
+        <label for="idproducto_fk">Producto</label>
+        <select requeried id="idproducto_fk" name="idproducto_fk" class="form-control">
+            <option value="0">Selecciona un producto... </option>
+                $for prod in producto:
+                    <option value="$prod.idproducto">$prod.nom_producto</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="cantidad_pro">Cantidad</label>
+        <input required id="cantidad_pro" type="number" class="form-control" name="cantidad_pro" size="30"/>
+    </div>
+
+    <div class="form-group">
+        <label for="precio_in">Precio</label>
+        <input required id="precio_in" type="text" class="form-control" name="precio_in" size="30"/>
+    </div>
+
+    <div class="form-group">
+        <label></label>
+        <button id="send" name="send" class="form-control"><span><img src="/static/imagenes/menu/guardar.png" width="19" height="19"></span> Insertar</button>
+    </div>
+</form>
+<br>
+<br>
+</body>

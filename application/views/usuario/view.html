@@ -1,0 +1,114 @@
+$def with(usuario)
+
+<html>
+<head>
+    <style>
+        body {
+            background-image: url("/static/imagenes/14092.jpg");
+            background-position:center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font face: "Didact Gothic";
+            font size: 45;
+        }
+        @media only screen and (max-width: 740px) {
+        body {
+            background-image: url("/static/imagenes/14092.jpg");
+            
+        }
+        }
+        #view_usuario{
+            position: absolute;
+            width: 460px;
+            height: 360px;
+            left: 30%;
+            top: 60px;
+            background: #FFFFFF;
+            border: 2px solid #B1BDC9;
+            box-sizing: border-box;
+            border-radius: 15px;
+            padding-left: 30px;
+            padding-top: 10px;
+            padding-right: 30px;
+        }
+        #campos{
+            font-family: Didact Gothic;
+            font-style: center;
+            font-weight: center;
+            font-size: 17px;
+            line-height: 22px;
+            display: flex;
+            align-items: center;
+            left: center;
+            top: 120px;
+
+            color: #456583;
+        }
+    </style>
+</head>
+
+<body>
+<h3>
+    <a href="/usuario">Usuario</a>
+</h3>
+    <div id="view_usuario">
+        <p id="campos">
+        <strong>Nombre: </strong> &nbsp; $usuario.nombre <br>
+        </p>
+        <br>
+        <p id="campos">
+        <strong>Apellidos: </strong> &nbsp; $usuario.apellidos <br>
+        </p>
+        <br>
+        <p id="campos">
+        <strong>Correo: </strong> &nbsp; $usuario.correo_usuario <br>
+        </p>
+        <br>
+        <p id="campos">
+        <strong>Contraseña: </strong> &nbsp; $usuario.contrasena <br>
+        </p>
+        <br>
+        <p id="campos">
+        <strong>Direcciòn: </strong> &nbsp; $usuario.calle_num <br>
+        </p>
+        <br>
+        <p id="campos">
+        <strong>Colonia: </strong> &nbsp; $usuario.colonia <br>
+        </p>
+        <br>
+        <p id="campos">
+        <strong>Codigo postal: </strong> &nbsp; $usuario.codigo_postal <br>
+        </p>
+        <br>
+        <p id="campos">
+        <strong>Ciudad: </strong> &nbsp; $usuario.ciudad <br>
+        </p>
+        <br>
+        <p id="campos">
+        <strong>Estado: </strong> &nbsp; $usuario.estado <br>
+        </p>
+        <br>
+        <p id="campos">
+        <strong>Referencias: </strong> &nbsp; $usuario.referencias <br>
+        </p>
+        <br>
+        <p id="campos">
+        <strong>Fecha de registro: </strong> &nbsp; $usuario.fecha_reg_usu <br>
+        </p>
+        <br>
+        <strong><label id="campos">Estado</label></strong>
+        <div class="radio">
+            <div class="radio">
+            <label id="campos"><input type="radio" name="status_admin" value=1 checked> Activo</label>
+            <label id="campos"><input type="radio" name="status_admin" value=0> Inactivo</label>
+        </div>
+        <br>
+        <div class="form-group">
+        <label></label>
+        <button id="send" name="send" class="form-control"></span> Guardar</button>
+    </div>
+    </div>
+<br>
+<br>
+</body>

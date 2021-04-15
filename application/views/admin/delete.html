@@ -1,0 +1,101 @@
+$def with(admin, message)
+
+<html>
+<head>
+    <style>
+        body {
+            background-color: #EDEAEA;
+            background-position:center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font face: "Didact Gothic";
+            font size: 17px;
+        }
+        @media only screen and (max-width: 740px) {
+        body {
+            background-color: #EDEAEA;    
+            
+        }
+        }
+    </style>
+</head>
+
+<body>
+<h3>
+    <a href="/admin">Eliminar el Administrador</a>
+</h3>
+$if message != None:
+    <div class="alert alert-warning">
+        <strong>Advertencia </strong> $message
+    </div>
+
+<form action="" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="nombre_admin" id="nombre_admin" value="$admin.nombre_admin" />
+    <div class="form-group">
+        <label for="nombre_admin">Nombre</label>
+        <input readonly id="nombre_admin" type="text" class="form-control" name="nombre_admin" size="30" value="$admin.nombre_admin.split('!')[0]"/>
+    </div>
+
+    <div class="form-group">
+        <label>Apellidos</label>
+        <input readonly id="apellidos_admin" type="text" class="form-control" name="apellidos_admin" size="30" value="$admin.apellidos_admin"/>
+    </div>
+
+    <div class="form-group">
+        <label>Numero de cuenta</label>
+        <input readonly id="num_cuenta" type="text" class="form-control" name="num_cuenta" size="30" value="$admin.num_cuenta"/>
+    </div>
+
+    <div class="form-group">
+        <label>Banco</label>
+        <input readonly id="nombre_banco" type="text" class="form-control" name="nombre_banco" size="30" value="$admin.nombre_banco"/>
+    </div>
+
+    <div class="form-group">
+        <label>Tipo de tarjeta</label>
+        <select readonly name="tipo_tarjeta_admin" id="tipo_tarjeta_admin" class="form-control" value="$admin.tipo_tarjeta_admin">
+          <option value=0>Debito</option>
+          <option value=1>Credito</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Numero de tarjeta</label>
+        <input readonly id="num_tarjeta" type="number" class="form-control" name="num_tarjeta" size="30" value="$admin.num_tarjeta"/>
+    </div>
+
+    <div class="form-group">
+        <label>Telefono</label>
+        <input readonly id="telefono_admin" type="number" class="form-control" name="telefono_admin" size="30" value="$admin.telefono_admin"/>
+    </div>
+
+    <div class="form-group">
+        <label>Correo</label>
+        <input readonly id="correo_admin" type="email" class="form-control" name="correo_admin" size="30" value="$admin.correo_admin"/>
+    </div>
+
+    <div class="form-group">
+        <label>Contraseña</label>
+        <input readonly id="password" type="password" class="form-control" name="password" size="30" value="$admin.password"/>
+    </div>
+
+    <div class="form-group">
+        <label>Estado</label>
+        <select readonly name="status_admin" id="status_admin" class="form-control" value="$admin.status_admin">
+          <option value=0>Inactivo</option>
+          <option value=1 checked="">Activo</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label></label>
+        <button id="send" name="send" class="form-control"><span><img src="/static/imagenes/menu/eliminar.png" width="19" height="20"></span>  Eliminar</button>
+    </div>
+
+</form>
+
+<br>
+<br>
+<br>
+</body>

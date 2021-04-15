@@ -1,0 +1,48 @@
+$def with(proveedor)
+
+<html>
+<head>
+    <style>
+        body {
+            background-color: #EDEAEA;
+            background-position:center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font face: "Didact Gothic";
+            font size: 17px;
+        }
+        @media only screen and (max-width: 740px) {
+        body {
+            background-color: #EDEAEA;               
+        }
+        }
+    </style>
+</head>
+
+<body>
+<h3>
+    <a href="/proveedor">Proveedor</a>
+</h3>
+<table id="datos_tabla" class="table table-hover" cellspacing="0" width="100%">
+    <thead>
+        <th>Nombre</th>
+        <th>Telefono</th>
+        <th>Contacto</th>
+        <th>Editar</th>
+        <th>Eliminar</th>
+    </thead>
+    <tbody>
+        $for item in proveedor:
+        <tr>
+            <td><a href='/proveedor/view/$item.idproveedor'>$item.nombre_pro</a></td>
+            <td><a href='/proveedor/view/$item.idproveedor'>$item.telefono_pro</a></td>
+            <td><a href='/proveedor/view/$item.idproveedor'>$item.correo_pro</a></td>
+            <td><a href='/proveedor/edit/$item.idproveedor'><span><img src="/static/imagenes/menu/editar.png" width="15" height="16"></span></a></td>
+            <td><a href='/proveedor/delete/$item.idproveedor'><span><img src="/static/imagenes/menu/eliminar.png" width="15" height="16"></span></a></td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<br>
+</body>

@@ -1,0 +1,80 @@
+$def with(detalle_venta)
+
+<html>
+<head>
+    <style>
+        body {
+            background-image: url("/static/imagenes/14092.jpg");
+            background-position:center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font face: "Didact Gothic";
+            font size: 17px;
+        }
+        @media only screen and (max-width: 740px) {
+        body {
+            background-image: url("/static/imagenes/14092.jpg");   
+            
+        }
+        }
+        #view_venta{
+            position: absolute;
+            width: 460px;
+            height: 360px;
+            left: 30%;
+            top: 60px;
+            background: #FFFFFF;
+            border: 2px solid #B1BDC9;
+            box-sizing: border-box;
+            border-radius: 15px;
+            padding-left: 30px;
+            padding-top: 10px;
+            padding-right: 30px;
+        }
+        #campos{
+            font-family: Didact Gothic;
+            font-style: center;
+            font-weight: center;
+            font-size: 17px;
+            line-height: 22px;
+            display: flex;
+            align-items: center;
+            left: center;
+            top: 120px;
+
+            color: #141516;
+        }
+    </style>
+</head>
+
+<body>
+<h3>
+    <a href="/detalle_venta">Detalle venta</a>
+</h3>
+<div id="view_venta">
+        <p id="campos">
+        <strong>Venta: </strong> &nbsp; $detalle_venta.idventa <br>
+        </p>
+        <br>
+        <p id="campos">
+        <strong>Producto: </strong> &nbsp; $detalle_venta.idproducto <br>
+        </p>
+        <br>
+        <p id="campos">
+        <strong>Cantidad: </strong> &nbsp; $detalle_venta.cantidad <br>
+        </p>
+        <br>
+        <p id="campos">
+        <strong>Subtotal: </strong> &nbsp; $detalle_venta.subtotal <br>
+        </p>
+        <br>
+        <div class="form-group">
+        <label></label>
+            <button id="send" name="send" class="form-control"></span> Guardar</button>
+        </div>
+
+
+<br>
+<br>
+</body>
